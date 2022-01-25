@@ -9,20 +9,18 @@
 
         <form action="/" method="POST">
             <div class="views">
-                <% list.forEach(function(row) {%>
                     <div class="blogs">
-                        <h2><%= row.title%></h2>
-                        <img class="img2" src="<%= row.image_url%>" height="340" width="510"><br>
-                        <%= row.date%><br>
-                        <%= row.content%><br>
-                        <a href='#' class="btn border-shadow update">
+                        <h2><%= list.title%></h2>
+                        <img class="img2" src="<%= list.image_url%>" height="340" width="510"><br>
+                        <%= list.date%><br>
+                        <p><%= list.content%><br></p>
+                        <a href="/editblog/<%= list.id%>" class="btn border-shadow update">
                             <span class="text-gradient">Edit<i class="far fa-user"></i></span>
                         </a>
-                        <a href='#' class="btn border-shadow update">
+                        <a href="/deleteblog/<%= list.id%>" class="btn border-shadow update">
                             <span class="text-gradient">Delete<i class="far fa-user"></i></span>
                         </a>
                     </div>
-                <% }) %>
         </div>
         </form>
     </div>
