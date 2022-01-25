@@ -31,11 +31,16 @@
                             <%= row.date%>
                         </td>
                         <td>
-                            <%= row.content%>
+                            <script>
+                                var div=document.createElement("div");
+                                div.innerHTML='<p><%= row.content %></p>';
+                                var excerpt=div.innerText.substring(0,30)+"......";
+                                document.write(excerpt);
+                            </script>
                         </td>
                     </tr>
                     <tr>
-                        <td><a href='/viewpage' class="btn border-shadow update">
+                        <td><a href='/viewpage/<%= row.id%>' class="btn border-shadow update">
                             <span class="text-gradient">Read More<i class="far fa-user"></i></span>
                         </a></td>
                     </tr>
